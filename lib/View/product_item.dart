@@ -9,14 +9,16 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
+      elevation:12,
       child: ListTile(
-        tileColor: Colors.white70,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
         title: Text(product.ProductName,style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 35
+          fontSize: 40,
+          color: Colors.lightBlue
         ),),
         subtitle: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,15 +29,15 @@ class ProductItem extends StatelessWidget {
                 fontSize: 20
               ),
             ),
-            Text("Price : ${product.Img}",style: TextStyle(
+            Text("Price : ${product.UnitPrice}",style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20
             ),),
-            Text("Quantity : ${product.UnitPrice}",style: TextStyle(
+            Text("Quantity : ${product.Qty}",style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20
             ),),
-            Text("Total price : ${product.CreatedDate}",style: TextStyle(
+            Text("Total price : ${product.TotalPrice}",style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20
             ),),
@@ -47,14 +49,19 @@ class ProductItem extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.lightBlueAccent,
+                    color: Colors.green,
                     borderRadius: BorderRadius.circular(15)
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.edit),
-                      Text("Edit")
+                      Icon(Icons.edit,color: Colors.white,),
+                      Text("Edit",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18
+                      ),
+                      )
                     ],
                   ),
                 ),
@@ -68,8 +75,14 @@ class ProductItem extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.delete),
-                      Text("delete")
+                      Icon(Icons.delete,color: Colors.white,),
+                      Text("delete",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 18
+                        ),
+                      )
                     ],
                   ),
                 ),
